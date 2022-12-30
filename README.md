@@ -2,4 +2,4 @@
 A simple tool that tests for potential SSRF vulnerability
 
 # Usage 
-Supply the full URL of a website in the first prompt
+python3 main.py -u URL
