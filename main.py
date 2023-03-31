@@ -12,13 +12,12 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 def test_ssrf(target_url, param, payload, method):
     """Tests a single payload on a single parameter"""
 
-    test_url = target_url
     if method == 'GET':
-        test_url += '?' + param + '=' + payload
+        test_url = f"{target_url}?{param}={payload}"
         r = requests.get(test_url)
     elif method == 'POST':
         data = {param: payload}
-        r = requests.post(test_url, data=data)
+        r = requests.post(target_url, data=data)
 
     # look for common signs of SSRF vulnerability
     if r.status_code == 200 and "127.0.0.1" in r.text:
