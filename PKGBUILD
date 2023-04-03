@@ -2,7 +2,7 @@
 pkgname=ssrfhunter
 pkgver=1.1
 pkgrel=1
-pkgdesc="A simple tool that tests for potential SSRF vulnerability"
+pkgdesc="A simple tool that tests for potential SSRF vulnerability in a provided URL"
 arch=('any')
 url="https://github.com/not1cyyy/SSRFHunter"
 license=('GPL-3.0')
